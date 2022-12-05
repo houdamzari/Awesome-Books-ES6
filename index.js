@@ -1,28 +1,19 @@
-/* eslint-disable max-classes-per-file */
-
 import {
   form,
   addButton,
   titleInput,
   authorInput,
-  booksContainer,
   listSectionBtn,
   formSectionBtn,
   contactSectionBtn,
   librarySection,
   formSection,
   contactSection,
-} from './modules/queries';
-
-import Library from './modules/Library';
-class Book {
-  constructor(title, author, id) {
-    this.title = title;
-    this.author = author;
-    this.id = id;
-  }
-}
-
+  dayDate,
+} from './modules/queries.js';
+import Book from './modules/book.js';
+import Library from './modules/Library.js';
+// import { localDatetime } from './modules/dates.js';
 const library = new Library();
 library.updateBooks();
 
@@ -36,7 +27,7 @@ addButton.addEventListener('click', (e) => {
   form.reset();
 });
 
-function toggleDisplaySection(id) {
+const toggleDisplaySection = (id) => {
   if (id === 'list-btn') {
     librarySection.classList.remove('hide');
     formSection.classList.add('hide');
@@ -50,7 +41,7 @@ function toggleDisplaySection(id) {
     formSection.classList.add('hide');
     contactSection.classList.remove('hide');
   }
-}
+};
 
 listSectionBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -66,3 +57,12 @@ contactSectionBtn.addEventListener('click', (e) => {
   e.preventDefault();
   toggleDisplaySection(e.target.id);
 });
+
+const date = window.luxon;
+const today = date.DateTime.local();
+
+let { year, day, month, hour, minute, second } = today;
+
+let dateNow = `${day}/${month}/${year}  ${hour}:${minute}:${second}`;
+
+dayDate.innerHTML = dateNow;

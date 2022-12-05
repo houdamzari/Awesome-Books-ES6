@@ -1,4 +1,6 @@
-class Library {
+import { booksContainer } from './queries.js';
+
+export default class Library {
   constructor() {
     this.bookList = [];
     const localData = localStorage.getItem('bookList');
@@ -36,5 +38,3 @@ class Library {
     this.storeBooks();
   }
 }
-
-module.exports = Library;

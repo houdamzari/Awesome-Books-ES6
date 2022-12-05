@@ -9,3 +9,5 @@ export const contactSectionBtn = document.querySelector('#contact-btn');
 export const librarySection = document.querySelector('.library-section');
 export const formSection = document.querySelector('.form-section');
 export const contactSection = document.querySelector('.contact-section');
+export const dayDate = document.querySelector('.date1');
+export const hourDate = document.querySelector('.date2');
