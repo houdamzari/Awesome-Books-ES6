@@ -1,5 +1,8 @@
-// const { DateTime } = require('luxon');
+const date = window.luxon;
+const today = date.DateTime.local();
 
-// export const localDatetime = DateTime.local().toLocaleString(
-//   DateTime.DATETIME_FULL
-// );
+const {
+  year, day, month, hour, minute, second,
+} = today;
+
+export const dateNow = `${day}/${month}/${year}  ${hour}:${minute}:${second}`;

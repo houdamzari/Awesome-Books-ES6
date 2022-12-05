@@ -13,7 +13,8 @@ import {
 } from './modules/queries.js';
 import Book from './modules/book.js';
 import Library from './modules/Library.js';
-// import { localDatetime } from './modules/dates.js';
+import { dateNow } from './modules/dates.js';
+
 const library = new Library();
 library.updateBooks();
 
@@ -57,12 +58,5 @@ contactSectionBtn.addEventListener('click', (e) => {
   e.preventDefault();
   toggleDisplaySection(e.target.id);
 });
-
-const date = window.luxon;
-const today = date.DateTime.local();
-
-let { year, day, month, hour, minute, second } = today;
-
-let dateNow = `${day}/${month}/${year}  ${hour}:${minute}:${second}`;
 
 dayDate.innerHTML = dateNow;

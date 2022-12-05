@@ -11,7 +11,7 @@ export default class Library {
 
   removeBook(bookId) {
     this.bookList = this.bookList.filter(
-      (book) => book.id !== parseInt(bookId, 10)
+      (book) => book.id !== parseInt(bookId, 10),
     );
   }
 
@@ -29,12 +29,10 @@ export default class Library {
       booksContainer.innerHTML += booksSection;
     });
     const removeButtons = document.querySelectorAll('.remove-button');
-    removeButtons.forEach((button) =>
-      button.addEventListener('click', (e) => {
-        this.removeBook(e.target.id);
-        this.updateBooks();
-      })
-    );
+    removeButtons.forEach((button) => button.addEventListener('click', (e) => {
+      this.removeBook(e.target.id);
+      this.updateBooks();
+    }));
     this.storeBooks();
   }
 }
