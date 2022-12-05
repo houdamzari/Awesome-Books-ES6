@@ -124,3 +124,10 @@ form {
 .hide {
   display: none;
 }
+
+.date1 {
+  text-align: end;
+  padding: 20px 100px;
+  font-size: 16px;
+  font-weight: bold;
+}
